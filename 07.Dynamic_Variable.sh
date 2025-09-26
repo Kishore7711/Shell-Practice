@@ -7,7 +7,18 @@
 ##### executed in end time - start time
 #### VAR_NAME=$(command)
 
-DATE=$(date)
+### DATE=$(date)
 
-echo "Time Stamp is : $DATE"
+##echo "Time Stamp is : $DATE"
+
+START_TIME=$(date +%s)  ## +%s is to get time in seconds
+
+sleep 10 &
+
+END_TIME=$(date +%s)
+
+TOTAL_TIME=$(($END_TIME - $START_TIME))
+
+echo "Script executed in : $TOTAL_TIME seconds"
+
 
