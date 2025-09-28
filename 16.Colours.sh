@@ -33,5 +33,5 @@
  Y="\e[33m"
  N="\e[0m"   ### N for Normal
 
-    echo -e "$R HILL WELCOME TO DEVOPS WITH AWS $N"
+    echo -e "$G HILL WELCOME TO DEVOPS WITH AWS $N"
     echo "check this colour"
