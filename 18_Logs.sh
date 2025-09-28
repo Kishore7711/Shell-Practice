@@ -6,6 +6,8 @@
 
 #### execute command and take the output and store the one variable ---- LOGS_FILE=$(echo "18_Logs.sh" | cut -d "." -f1) -- output is 18_Logs --- assign to variable LOGS_FILE
 
+#### echo "Script Execution Started at : $(date)" | tee -a $LOGS_FILE  --- it will append the output to the file
+
 USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
@@ -18,19 +20,19 @@ SCRIPT_NAME=$(echo "18_Logs.sh" | cut -d "." -f1)
 LOGS_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FOLDER
-echo "Script Execution Started at : $(date)"
+echo "Script Execution Started at : $(date)" | tee -a $LOGS_FILE
 
 
 if [ $USERID -ne 0 ] ; then
-    echo -e "$R ERROR:: $N Please run this script with $B ROOT Privilages $N"
+    echo -e "$R ERROR:: $N Please run this script with $B ROOT Privilages $N" | tee -a $LOGS_FILE
     exit 1
 fi
 
 VALIDATE(){
     if [ $1 -ne 0 ] ; then
-        echo -e "$R ERROR:: $N $2 Installation $R Failed $N"
+        echo -e "$R ERROR:: $N $2 Installation $R Failed $N" | tee -a $LOGS_FILE
     else
-        echo -e "$G SUCCESS:: $N $2 Installation $G Successful $N"
+        echo -e "$G SUCCESS:: $N $2 Installation $G Successful $N" | tee -a $LOGS_FILE
     fi
           }
 
@@ -40,7 +42,7 @@ if [ $? -ne 0 ]; then
 dnf install mysql -y &>>$LOGS_FILE
 VALIDATE $? "Mysql"
 else
-    echo -e "Mysql is already exist .... $Y SKIPPING $N"
+    echo -e "Mysql is already exist .... $Y SKIPPING $N" | tee -a $LOGS_FILE
 fi
 
 dnf list installed nginx &>>$LOGS_FILE
@@ -48,7 +50,7 @@ if [ $? -ne 0 ] ; then
 dnf install nginx -y &>>$LOGS_FILE
 VALIDATE $? "nginx"
 else
-    echo -e "Nginx is already exist .... $Y SKIPPING $N"
+    echo -e "Nginx is already exist .... $Y SKIPPING $N" | tee -a $LOGS_FILE
 fi
 
 dnf list installed python3 &>>$LOGS_FILE
@@ -56,5 +58,5 @@ if [ $? -ne 0 ] ; then
 dnf install python3 -y &>>$LOGS_FILE
 VALIDATE $? "Python3"
 else 
-    echo -e "Python3 is already exist ..... $Y SKIPPING $N"
+    echo -e "Python3 is already exist ..... $Y SKIPPING $N" | tee -a $LOGS_FILE
 fi
