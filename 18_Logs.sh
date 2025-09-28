@@ -52,7 +52,7 @@ else
 fi
 
 dnf list installed python3 &>>$LOGS_FILE
-if [ $? -ne 0] ; then
+if [ $? -ne 0 ] ; then
 dnf install python3 -y &>>$LOGS_FILE
 VALIDATE $? "Python3"
 else 
