@@ -13,8 +13,7 @@
 
 ######## 34.229.143.18 | 172.31.30.194 | t3.micro | https://github.com/Kishore7711/Shell-Practice.git
 ######## [ ec2-user@ip-172-31-30-194 ~/Shell-Practice ]$ echo -e "\e[34m today is BIRTHDAY"
- ####### today is BIRTHDAY ---- Blue Colour
-
+ ####### today is BIRTHDAY ---- Blue Colour -------
 
 ######## 34.229.143.18 | 172.31.30.194 | t3.micro | https://github.com/Kishore7711/Shell-Practice.git
 ######## [ ec2-user@ip-172-31-30-194 ~/Shell-Practice ]$ echo -e "\e[35m my coutry name INDIA"
