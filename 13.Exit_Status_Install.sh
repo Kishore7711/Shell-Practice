@@ -27,12 +27,17 @@ USERID=$(id -u)
 
 if [ $USERID -ne 0 ] ; then
     echo "ERROR:: Please run this Script with ROOT Privileges"
+    exit 1 ## failure is other than 0
 fi
 
 dnf install mysql -y
 
 if [ $? -ne 0 ] ; then
     echo "ERROR:: Mysql Installation is Failed"
+    exit 1
 else
     echo "SUCCESS:: Mysql Installation is Successfull"
 fi
+
+
+############  if there is Error in Script, proceed or not ?  ------ STOP THE SCRIPT -- give the exit code other than 0
