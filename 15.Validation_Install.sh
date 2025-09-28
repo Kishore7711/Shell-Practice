@@ -18,12 +18,11 @@ VALIDATE() {  ### Function receive inputs through $1, $2, $3 ... args just like 
         echo "SUCCESS:: Installation $2  is Successfull"
     fi
            }
-
 dnf install mysql -y
 VALIDATE $? "Mysql"
 
 dnf install nginx -y
-VALIDATE $? "nginx"
+VALIDATE $? "Nginx"
 
 dnf install python3 -y
 VALIDATE $? "Python3"
