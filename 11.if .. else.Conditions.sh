@@ -32,6 +32,8 @@ NUMBER=$1
 
 if [ $NUMBER -lt 20 ]; then
     echo "Given number $NUMBER is less than 20"
+elif [ $NUMBER -eq 20 ]; then
+    echo "Given number #NUMBER is qual to 20"
 else
     echo "Given number $NUMBER is greater than or equal to 20"
 fi
