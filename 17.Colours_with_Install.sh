@@ -8,15 +8,15 @@ N="\e[0m"   ### N for Normal
 USERID=$(id -u)
 
 if [ $USERID -ne 0 ] ; then
-    echo -e "$R ERROR:: Please run this script with ROOT Privilages $N"
+    echo -e "$R ERROR:: $N Please run this script with $R ROOT Privilages $N"
     exit 1
 fi
 
 VALIDATE(){
     if [ $1 -ne 0 ] ; then
-        echo -e "$R ERROR:: $2 Installation Failed $N"
+        echo -e "$R ERROR:: $N $2 Installation $R Failed $N"
     else
-        echo -e "$G SUCCESS:: $2 Installation Successful $N"
+        echo -e "$G SUCCESS:: $N $2 Installation $G Successful $N"
     fi
           }
 
