@@ -9,7 +9,7 @@ echo "please enter a Number :"
 read NUMBER
 
 if [ $(($NUMBER % 2)) -eq 0 ] ; then
-    echo "Given number is $NUMBER is EVEN Number"
+    echo "Given number $NUMBER is EVEN Number"
 else
-    echo "Given number is $NUMBER is ODD Number"
+    echo "Given number $NUMBER is ODD Number"
 fi
