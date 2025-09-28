@@ -29,9 +29,9 @@
  #######My Company name is ISG ---- White Colour
 
  R="\e[31m"
- G=""\e[32m"
+ G="\e[32m"
  Y="\e[33m"
- N="\e[37m"   ### N for Normal
+ N="\e[0m"   ### N for Normal
 
     echo -e "$R HILL WELCOME TO DEVOPS WITH AWS $N"
     echo "check this colour"
