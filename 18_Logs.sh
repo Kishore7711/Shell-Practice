@@ -6,7 +6,7 @@
 
 #### execute command and take the output and store the one variable ---- LOGS_FILE=$(echo "18_Logs.sh" | cut -d "." -f1) -- output is 18_Logs --- assign to variable LOGS_FILE
 
-USERID-$(id -u)
+USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
@@ -37,7 +37,7 @@ VALIDATE(){
 dnf list installed mysql &>>$LOGS_FILE
 ####  install if it is not found
 if [ $? -ne 0 ]; then
-dnf install mysql -y &>>&LOGS_FILE
+dnf install mysql -y &>>$LOGS_FILE
 VALIDATE $? "Mysql"
 else
     echo -e "Mysql is already exist .... $Y SKIPPING $N"
