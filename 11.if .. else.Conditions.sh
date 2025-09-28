@@ -37,3 +37,4 @@ elif [ $NUMBER -eq 20 ]; then
 else
     echo "Given number $NUMBER is greater than to 20"
 fi
+
