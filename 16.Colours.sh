@@ -34,4 +34,4 @@
  N="\e[37m"   ### N for Normal
 
     echo -e "$R" HILL WELCOME TO DEVOPS WITH AWS "$N"
-    echo -e "check this colour
+    echo -e "check this colour"
