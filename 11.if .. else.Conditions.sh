@@ -25,7 +25,8 @@
 ######## commands to be executed if condition is false
 ##### fi
 
-### in programming we use -eq -- equal, -ne -- not equal, -lt -- less than, -le -- less than or equal to, -gt -- greater than, -ge -- greater than or equal to, for comparison
+### in programming we use -eq -- equal, -ne -- not equal, -lt -- less than, -le -- less than or equal to, 
+###                       -gt -- greater than, -ge -- greater than or equal to, for comparison
 
 NUMBER=$1
 
