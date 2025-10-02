@@ -26,17 +26,31 @@ if [ $USERID -ne 0 ]; then
 fi
 
 VALIDATE(){
-    if [ $1 -ne 0 ] ; then  #### $1 is exit status of the last executed command
+    if [ $1 -ne 0 ] ; then 
         echo -e "$R ERROR:: $N $2 Installation $R Failed $N" | tee -a $LOGS_FILE
     else
         echo -e "$G SUCCESS:: $N $2 Installation $G Successful $N" | tee -a $LOGS_FILE
     fi
          }
 
+
     ### $@ --- all the arguments passed to the script
 
-    for package in $@
-    do
-        echo package is $package
-    
-    done
+    ###### for package in $@
+    ###### do
+    #####    echo package is $package
+    ##### done
+
+for package in $@
+do
+   #### check the package is already installed or not
+   dnf list installed $package &>>$LOGS_FILE
+
+   #### if exit status is 0, already installed... -ne 0 need to install it now
+   if [ $? -ne 0 ]; then #### $0 is exit status of last executed command
+      dnf install $package -y &>>$LOGS_FILE
+      VALIDATE $? "$package"
+   else
+      echo -e "$package is already exist .... $Y SKIPPING $N" | tee -a $LOGS_FILE
+    fi
+done

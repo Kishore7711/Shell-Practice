@@ -29,7 +29,7 @@ if [ $USERID -ne 0 ] ; then
 fi
 
 VALIDATE(){
-    if [ $1 -ne 0 ] ; then   #### $1 is exit status of the last executed command
+    if [ $1 -ne 0 ] ; then  
         echo -e "$R ERROR:: $N $2 Installation $R Failed $N" | tee -a $LOGS_FILE
     else
         echo -e "$G SUCCESS:: $N $2 Installation $G Successful $N" | tee -a $LOGS_FILE
