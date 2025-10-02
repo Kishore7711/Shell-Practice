@@ -31,4 +31,12 @@ VALIDATE(){
     else
         echo -e "$G SUCCESS:: $N $2 Installation $G Successful $N" | tee -a $LOGS_FILE
     fi
-        }
+         }
+
+    ### $@ --- all the arguments passed to the script
+
+    for package in $@
+    do
+        echo package is $package
+    
+    done
