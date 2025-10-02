@@ -50,6 +50,8 @@ do
    if [ $? -ne 0 ]; then #### $0 is exit status of last executed command
       dnf install $package -y &>>$LOGS_FILE
       VALIDATE $? "$package"
+      echo "----------------------------------------" &>>$LOGS_FILE
+      echo &>>$LOGS_FILE
    else
       echo -e "$package is already exist .... $Y SKIPPING $N" | tee -a $LOGS_FILE
     fi
