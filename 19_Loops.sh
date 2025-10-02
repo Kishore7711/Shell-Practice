@@ -17,7 +17,8 @@ SCRIPT_NAME=$(echo "19_Loops.sh" | cut -d "." -f1)
 LOGS_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FOLDER
-echo "Script Exectution Started at : $(date)" | tee -a $LOGS_FILE"
+echo "Script Exectution Started at : $(date)" | tee -a $LOGS_FILE
+
 
 if [ $USERID -ne 0 ]; then
     echo -e "$R ERROR:: $N Please run this script with $B ROOT Prilivages $N" | tee -a $LOGS_FILE
