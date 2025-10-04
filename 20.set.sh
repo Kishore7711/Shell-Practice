@@ -6,7 +6,7 @@ set -e
 ##    echo "There is an Error in $LINENO, Command is : $BASH_COMMAND"
 ##         }
 
-tranp 'echo "There is an Error in $LINENO, Command is : $BASH_COMMAND"' ERR
+trap 'echo "There is an Error in $LINENO, Command is : $BASH_COMMAND"' ERR
 
 echo "hi hello welcome to AWS"
 
